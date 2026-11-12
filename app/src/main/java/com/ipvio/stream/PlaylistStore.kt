@@ -691,7 +691,17 @@ object PlaylistStore {
                 phase = "Playlist wird geprüft …"
                 val scan = readFile(src, gz, cs, null) { r -> M3uParser.scanStream(r, guard()) }
                 if (wantAsk || LoadLogic.estimate(scan.bytes, hidden) > budget) {
-                    if (!ask) throw PlaylistError(MSG_TOO_BIG)
+                    if (!ask) {
+                        // NEONGRID v0.4: low-memory devices (Fire TV Stick) - instead of failing at startup/background,
+                        // automatically keep only the English content that fits this device's memory.
+                        val shown = LoadLogic.preselect(scan.counts, scan.bytes, "en", budget)
+                        if (shown.isEmpty()) throw PlaylistError(MSG_TOO_BIG)
+                        hidden = scan.counts.keys - shown
+                        LangFilter.set(c, hidden)
+                        phase = "Titel werden eingelesen …"
+                        val parsedAuto = readFile(src, gz, cs, teeTo) { r -> M3uParser.parseStream(r, hidden, guard()) }
+                        return Built(parsedAuto, hidden)
+                    }
                     val now = scan.counts.keys - hidden
                     val pre = if (hidden.isNotEmpty() && now.isNotEmpty()) now else LoadLogic.systemPreselect(scan.counts, systemLang())
                     val shown = askLanguages(scan.counts, scan.bytes, budget, pre) ?: throw PlaylistError(MSG_CANCEL)
