@@ -432,7 +432,7 @@ object M3uParser {
      * so a list with 800,000 entries needs only as much memory as the chosen languages.
      * [check] is called every 2,000 entries (progress, abort, memory guard).
      */
-    fun parseLines(lines: Sequence<String>, hidden: Set<String> = emptySet(), check: (() -> Unit)? = null): ParsedPlaylist {
+    fun parseLines(lines: Sequence<String>, hidden: Set<String> = emptySet(), check: (() -> Unit)? = null, allKinds: Boolean = false): ParsedPlaylist {
         val pool = StringPool()
         val langOf = LangOf(pool)
         val st = Stats()
@@ -445,7 +445,7 @@ object M3uParser {
         entries(lines, check, onHeader = { header = it; headCu = CatchupLogic.fromInfo(it, "") }) { e ->
             val kd = classify(e, st, langOf) ?: return@entries
             if (kd.lang in hidden) return@entries
-            if (liveOnly && kd.kind != Kind.LIVE) return@entries  // NEONGRID Lite mode
+            if (liveOnly && !allKinds && kd.kind != Kind.LIVE) return@entries  // NEONGRID Lite mode
             val group = pool.of(e.group)
             val q = quality(e.name, e.group)
             when (kd.kind) {

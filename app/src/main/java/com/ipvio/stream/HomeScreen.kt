@@ -623,7 +623,8 @@ fun HomeScreen(
                                     SmallPill("Startseite anpassen", icon = AIcon.Sliders) { HomeEdit.active = true; scope.launch { states[0].animateScrollToItem(0) } }
                                 }
                             }
-                            if (movies.isEmpty() && series.isEmpty()) item { EmptyHint("Diese Playlist enthält keine Filme oder Serien. Live TV findest du links.") }
+                            if (M3uParser.liveOnly) item(key = "lite") { LiteBrowser() }
+                            else if (movies.isEmpty() && series.isEmpty()) item { EmptyHint("Diese Playlist enthält keine Filme oder Serien. Live TV findest du links.") }
                         }
                         1, 2 -> {
                             val isM = tab == 1

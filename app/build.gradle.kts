@@ -36,8 +36,8 @@ android {
         minSdk = 24
         targetSdk = 37
         // Raise both for every release; the GitHub release tag must match versionName (e.g. tag "v1.1").
-        versionCode = 8
-        versionName = "0.4.1"
+        versionCode = 9
+        versionName = "0.5.0"
         // Name unter dem Symbol; der Debug-Build überschreibt ihn (siehe buildTypes)
         manifestPlaceholders["appLabel"] = "NEONGRID"
 

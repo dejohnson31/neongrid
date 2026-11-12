@@ -178,6 +178,22 @@ class XtreamApi(private val client: OkHttpClient, private val ua: String) {
         return out
     }
 
+    // ---- NEONGRID Lite mode: movies/series one category at a time ----
+    fun liteCategories(a: XtreamLogic.Acct, movies: Boolean): Map<String, String> =
+        categories(a, if (movies) "get_vod_categories" else "get_series_categories")
+
+    /** M3U lines for one category only (keeps memory small on Fire TV Stick). */
+    fun liteCategory(a: XtreamLogic.Acct, movies: Boolean, catId: String, cats: Map<String, String>): String {
+        val sb = StringBuilder()
+        val extra = "&category_id=" + java.net.URLEncoder.encode(catId, "UTF-8")
+        if (movies) {
+            stream(XtreamLogic.api(a, "get_vod_streams", extra)) { f -> XtreamLogic.movieEntry(a, f, cats)?.let { sb.append(it).append('\n') } }
+        } else {
+            stream(XtreamLogic.api(a, "get_series", extra)) { f -> XtreamLogic.seriesOf(f, cats)?.let { sb.append(XtreamLogic.lazyEntry(a, it)).append('\n') } }
+        }
+        return sb.toString()
+    }
+
     /** Movies as finished lines into [w]; returns their number. */
     private fun writeMovies(a: XtreamLogic.Acct, w: Writer): Int {
         var n = 0

@@ -792,6 +792,38 @@ object PlaylistStore {
     }
 
     /** Build and show the list from the active and the loaded further playlists (background thread). */
+    // ---- NEONGRID Lite mode (low-memory devices): one movie/series category in memory at a time ----
+    var liteVod by mutableStateOf<List<Item>>(emptyList())
+        private set
+    var liteBusy by mutableStateOf(false)
+        private set
+    var liteLabel by mutableStateOf<String?>(null)
+        private set
+
+    fun liteAcct(c: Context): XtreamLogic.Acct? = savedUrl(c)?.let { XtreamLogic.fromUrl(it) }
+
+    suspend fun liteCats(c: Context, movies: Boolean): Map<String, String> = withContext(Dispatchers.IO) {
+        val a = liteAcct(c) ?: return@withContext emptyMap()
+        runCatching { xtreamApi().liteCategories(a, movies) }.getOrDefault(emptyMap())
+    }
+
+    suspend fun liteLoad(c: Context, movies: Boolean, catId: String, cats: Map<String, String>) {
+        val a = liteAcct(c) ?: return
+        liteBusy = true
+        try {
+            val items = withContext(Dispatchers.IO) {
+                runCatching {
+                    liteVod = emptyList()  // free the previous category first
+                    val text = xtreamApi().liteCategory(a, movies, catId, cats)
+                    M3uParser.parseLines(text.lineSequence(), emptySet(), null, allKinds = true).items
+                }.getOrDefault(emptyList())
+            }
+            liteVod = items
+            liteLabel = cats[catId]
+            rebuild(c)
+        } finally { liteBusy = false }
+    }
+
     private fun rebuild(c: Context) {
         val u = primaryUrl ?: return
         IgnoredGroups.init(c)
@@ -800,7 +832,7 @@ object PlaylistStore {
         val ex = urls.mapNotNull { url -> extras[url]?.let { url to it } }
         val names = listOf(nameOf(u)) + ex.map { nameOf(it.first) }
         val m = MultiLogic.merge(listOf(primaryItems) + ex.map { it.second.items }, names)
-        val vis = m.visible()
+        val vis = m.visible() + liteVod
         val epg = (primaryEpg + ex.flatMap { it.second.epg }).distinct()
         twins = if (m.shadow.isEmpty()) emptyMap() else HashMap<String, Item>().also { t -> for (it in m.items) if (it.id in m.shadow) t.putIfAbsent("${it.src}|" + it.mk, it) }
         merged = m
