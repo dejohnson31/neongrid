@@ -211,9 +211,17 @@ private fun AppContent() {
         withContext(Dispatchers.IO) { General.cleanupLegacy(ctx) }
         if (resumeAdd) return@LaunchedEffect
         PlaylistStore.savedUrl(ctx)?.let { u ->
-            val skip = !SettingsLogic.refreshDue(General.plan(), General.lastRefresh, System.currentTimeMillis(), General.zone())
-            val ok = PlaylistStore.load(ctx, u, false, skip)
-            if (ok && !skip) General.markRefreshed(ctx)
+            // NEONGRID v0.3 fast start: always show the saved playlist first (no network at launch).
+            val due = SettingsLogic.refreshDue(General.plan(), General.lastRefresh, System.currentTimeMillis(), General.zone())
+            val fromCache = PlaylistStore.load(ctx, u, false, true)
+            if (!fromCache || !PlaylistStore.hasData) {
+                // Nothing saved yet (first run or lost cache): download now.
+                if (PlaylistStore.load(ctx, u, false, false)) General.markRefreshed(ctx)
+            } else if (due) {
+                // Saved list is on screen; refresh it in the background after the UI has settled.
+                delay(20_000)
+                if (PlaylistStore.load(ctx, u, false, false) && PlaylistStore.error == null) General.markRefreshed(ctx)
+            }
         }
     }
 

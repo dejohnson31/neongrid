@@ -117,7 +117,7 @@ object General {
         resumeVod = p.getBoolean("resume_vod", false)
         confirmExit = p.getBoolean("confirm_exit", true)
         bundleLive = p.getBoolean("bundle_live", true)
-        refreshMode = p.getInt("refresh_mode", 0).coerceIn(0, 4)
+        refreshMode = p.getInt("refresh_mode", 2)  /* NEONGRID: default daily 04:00, not every start */.coerceIn(0, 4)
         refreshInterval = p.getInt("refresh_interval", 12).coerceIn(1, 168)
         refreshHour = p.getInt("refresh_hour", 4).coerceIn(0, 23)
         refreshMinute = p.getInt("refresh_minute", 0).coerceIn(0, 59)
