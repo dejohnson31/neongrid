@@ -281,6 +281,17 @@ object M3uParser {
     fun parse(text: String): List<Item> = parseLines(text.lineSequence()).items
 
     /** Reads line by line from a Reader. This way the whole list never has to sit in memory as a single String. */
+    /** NEONGRID Lite mode: on low-memory devices (Fire TV Stick) only live channels are loaded. */
+    @Volatile var liveOnly: Boolean = false
+
+    fun initLite(c: android.content.Context) {
+        runCatching {
+            val am = c.getSystemService(android.content.Context.ACTIVITY_SERVICE) as android.app.ActivityManager
+            val mi = android.app.ActivityManager.MemoryInfo().also { am.getMemoryInfo(it) }
+            liveOnly = am.isLowRamDevice || mi.totalMem < 1_500_000_000L
+        }
+    }
+
     fun parseStream(reader: java.io.Reader, hidden: Set<String> = emptySet(), check: (() -> Unit)? = null): ParsedPlaylist =
         LinePump(reader).use { parseLines(it.lines(), hidden, check) }
 
@@ -434,6 +445,7 @@ object M3uParser {
         entries(lines, check, onHeader = { header = it; headCu = CatchupLogic.fromInfo(it, "") }) { e ->
             val kd = classify(e, st, langOf) ?: return@entries
             if (kd.lang in hidden) return@entries
+            if (liveOnly && kd.kind != Kind.LIVE) return@entries  // NEONGRID Lite mode
             val group = pool.of(e.group)
             val q = quality(e.name, e.group)
             when (kd.kind) {

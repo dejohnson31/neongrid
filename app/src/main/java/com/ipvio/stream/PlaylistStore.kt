@@ -361,7 +361,7 @@ object PlaylistStore {
     // ------------------------------------------------------------------ Dateien je Playlist
 
     private fun key(url: String) = url.trim().hashCode()
-    private fun cacheFile(c: Context, url: String) = File(c.filesDir, "pl_" + key(url) + ".bin")
+    private fun cacheFile(c: Context, url: String) = File(c.filesDir, "pl_" + key(url) + (if (M3uParser.liveOnly) ".live" else "") + ".bin")
     private fun gzFile(c: Context, url: String) = File(c.filesDir, "pl_" + key(url) + ".m3u.gz")
     private fun rawFile(c: Context, url: String) = File(c.filesDir, "pl_" + key(url) + ".m3u")
     private fun partFile(c: Context, url: String) = File(c.filesDir, "pl_" + key(url) + ".part")

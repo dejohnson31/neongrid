@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit
 /** Background refresh of the playlist according to the set plan (daily, weekly, every X hours). */
 class UpdateWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx, params) {
     override suspend fun doWork(): Result {
+        M3uParser.initLite(applicationContext)
         val c = applicationContext
         General.init(c)
         Config.init(c)

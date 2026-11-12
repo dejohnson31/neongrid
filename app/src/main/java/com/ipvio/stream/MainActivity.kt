@@ -36,6 +36,7 @@ import coil.memory.MemoryCache
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        M3uParser.initLite(this)  // NEONGRID Lite mode (<1.5 GB RAM: live TV only)
         // Load settings early so colors and size are right in the very first frame.
         Profiles.init(this)
         val pick = Profiles.needsPicker(this)
