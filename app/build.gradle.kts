@@ -39,7 +39,7 @@ android {
         versionCode = 4
         versionName = "0.1.0"
         // Name unter dem Symbol; der Debug-Build überschreibt ihn (siehe buildTypes)
-        manifestPlaceholders["appLabel"] = "IPVIO Stream"
+        manifestPlaceholders["appLabel"] = "NEONGRID"
 
         buildConfigField("String", "TMDB_KEY", "\"${secret("TMDB_KEY")}\"")
         buildConfigField("String", "OMDB_KEY", "\"${secret("OMDB_KEY")}\"")
@@ -60,8 +60,8 @@ android {
         // Test-Build (Run in Android Studio / Debug-APK): eigene App-ID, damit die private IPVIO-App auf dem Fernseher
         // nicht überschrieben wird. Beide Apps lassen sich parallel installieren (eigene Daten, eigener Name).
         debug {
-            applicationIdSuffix = ".test"
-            manifestPlaceholders["appLabel"] = "IPVIO Stream"
+            // applicationIdSuffix removed for NEONGRID
+            manifestPlaceholders["appLabel"] = "NEONGRID"
         }
         release {
             if (hasKeystore) signingConfig = signingConfigs.getByName("release")
