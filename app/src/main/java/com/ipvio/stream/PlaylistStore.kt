@@ -344,13 +344,25 @@ object PlaylistStore {
         val out = LinkedHashMap<String, Int>()
         for (act in listOf("get_vod_categories", "get_series_categories", "get_live_categories")) {
             try {
-                val body = client.newCall(Request.Builder().url(base + act).build()).execute().use { r ->
-                    if (r.isSuccessful) r.body?.string() else null
-                } ?: continue
-                val a = JSONArray(body)
-                for (i in 0 until a.length()) {
-                    val n = a.getJSONObject(i).optString("category_name")
-                    if (n.isNotBlank() && !out.containsKey(n)) out[n] = i
+                // Read entry by entry instead of loading the whole answer as one string (less memory on Fire TV)
+                client.newCall(Request.Builder().url(base + act).build()).execute().use { r ->
+                    val body = if (r.isSuccessful) r.body else null
+                    if (body != null) android.util.JsonReader(body.charStream()).use { jr ->
+                        jr.isLenient = true
+                        jr.beginArray()
+                        var i = 0
+                        while (jr.hasNext()) {
+                            var n = ""
+                            jr.beginObject()
+                            while (jr.hasNext()) {
+                                if (jr.nextName() == "category_name" && jr.peek() == android.util.JsonToken.STRING) n = jr.nextString() else jr.skipValue()
+                            }
+                            jr.endObject()
+                            if (n.isNotBlank() && !out.containsKey(n)) out[n] = i
+                            i++
+                        }
+                        jr.endArray()
+                    }
                 }
             } catch (e: Exception) {
             }
@@ -1047,10 +1059,14 @@ object PlaylistStore {
         val before = sig(primaryItems)
         heavy = true
         if (loadStarted == 0L) loadStarted = System.currentTimeMillis()
+        var released = false
         val ok = withContext(Dispatchers.IO) {
             try {
                 val (src, cs) = downloadWithRetry(c, u)
                 val gzTmp = tmp(gzFile(c, u))
+                // Little memory free: release the shown list before parsing, otherwise old and new list
+                // would be in memory at once (reload failed with "too big" on Fire TV). Restored from cache on failure.
+                if (rawChannels.isNotEmpty() && Mem.heapTight(0.45)) { released = true; setItems(emptyList()); System.gc() }
                 val b = build(c, src, false, cs, ask, gzTmp, forceAsk)
                 val parsed = b.parsed
                 if (parsed.counts.isEmpty()) throw PlaylistError("Keine Sender in der Playlist gefunden.")
@@ -1063,7 +1079,7 @@ object PlaylistStore {
                 Catchup.saveParsed(c, u, parsed.catchup)
                 commitGz(c, u, gzTmp)
                 val list = parsed.items
-                if (sig(list) != before || !usedCache || b.hidden != shownHidden) show(c, u, list, urls, order, parsed.counts, parsed.bytes, b.hidden)
+                if (released || sig(list) != before || !usedCache || b.hidden != shownHidden) show(c, u, list, urls, order, parsed.counts, parsed.bytes, b.hidden)
                 else { primaryEpg = urls; primaryOrder = order; langCounts = parsed.counts; langBytes = parsed.bytes; restartCatchup(c) }
                 // Weitere gezeigte Playlists ebenfalls vom Server erneuern
                 loadExtras(c, network = true)
@@ -1086,6 +1102,12 @@ object PlaylistStore {
                 if (rawChannels.isEmpty() || save) error = MSG_TOO_BIG
                 usedCache
             }
+        }
+        // Reload failed after the shown list was released: bring the last good list back from the cache
+        if (released && rawChannels.isEmpty()) {
+            val keep = error
+            withContext(Dispatchers.IO) { runCatching { fromLocal(c, u, allowGz = true, ask = false) } }
+            error = keep
         }
         loading = false
         return ok
