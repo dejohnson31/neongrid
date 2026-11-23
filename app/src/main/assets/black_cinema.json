@@ -1,0 +1,1644 @@
+{
+ "version": 1,
+ "note": "Seed list. Years are checked against TMDB by tools/verify_catalog.py; matcher tolerates +/-1 year.",
+ "categories": {
+  "BLX": "Blaxploitation",
+  "HOOD": "Hood & Urban",
+  "ROM": "Romance",
+  "COM": "Comedy",
+  "ACT": "Action & Crime",
+  "FAM": "Family",
+  "MUS": "Music & Biopics",
+  "HIST": "Civil Rights & History",
+  "HOR": "Horror & Thriller",
+  "DRAMA": "Drama",
+  "CLAS": "Classics"
+ },
+ "movies": [
+  {
+   "t": "Lilies of the Field",
+   "y": 1963,
+   "c": [
+    "CLAS",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "A Raisin in the Sun",
+   "y": 1961,
+   "c": [
+    "CLAS",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Carmen Jones",
+   "y": 1954,
+   "c": [
+    "CLAS",
+    "MUS"
+   ]
+  },
+  {
+   "t": "Cabin in the Sky",
+   "y": 1943,
+   "c": [
+    "CLAS",
+    "MUS"
+   ]
+  },
+  {
+   "t": "Stormy Weather",
+   "y": 1943,
+   "c": [
+    "CLAS",
+    "MUS"
+   ]
+  },
+  {
+   "t": "In the Heat of the Night",
+   "y": 1967,
+   "c": [
+    "CLAS",
+    "HIST"
+   ]
+  },
+  {
+   "t": "Guess Who's Coming to Dinner",
+   "y": 1967,
+   "c": [
+    "CLAS",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Sweet Sweetback's Baadasssss Song",
+   "y": 1971,
+   "c": [
+    "BLX"
+   ]
+  },
+  {
+   "t": "Shaft",
+   "y": 1971,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Super Fly",
+   "y": 1972,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Coffy",
+   "y": 1973,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Foxy Brown",
+   "y": 1974,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Black Caesar",
+   "y": 1973,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Hell Up in Harlem",
+   "y": 1973,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Blacula",
+   "y": 1972,
+   "c": [
+    "BLX",
+    "HOR"
+   ]
+  },
+  {
+   "t": "Scream Blacula Scream",
+   "y": 1973,
+   "c": [
+    "BLX",
+    "HOR"
+   ]
+  },
+  {
+   "t": "Dolemite",
+   "y": 1975,
+   "c": [
+    "BLX",
+    "COM"
+   ]
+  },
+  {
+   "t": "The Human Tornado",
+   "y": 1976,
+   "c": [
+    "BLX",
+    "COM"
+   ]
+  },
+  {
+   "t": "The Mack",
+   "y": 1973,
+   "c": [
+    "BLX"
+   ]
+  },
+  {
+   "t": "Cleopatra Jones",
+   "y": 1973,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Three the Hard Way",
+   "y": 1974,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Truck Turner",
+   "y": 1974,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Willie Dynamite",
+   "y": 1974,
+   "c": [
+    "BLX"
+   ]
+  },
+  {
+   "t": "Across 110th Street",
+   "y": 1972,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Black Belt Jones",
+   "y": 1974,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Trouble Man",
+   "y": 1972,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Hammer",
+   "y": 1972,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Slaughter",
+   "y": 1972,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Detroit 9000",
+   "y": 1973,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Sugar Hill",
+   "y": 1974,
+   "c": [
+    "BLX",
+    "HOR"
+   ]
+  },
+  {
+   "t": "J.D.'s Revenge",
+   "y": 1976,
+   "c": [
+    "BLX",
+    "HOR"
+   ]
+  },
+  {
+   "t": "Abby",
+   "y": 1974,
+   "c": [
+    "BLX",
+    "HOR"
+   ]
+  },
+  {
+   "t": "Penitentiary",
+   "y": 1979,
+   "c": [
+    "BLX",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Buck and the Preacher",
+   "y": 1972,
+   "c": [
+    "CLAS",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Sounder",
+   "y": 1972,
+   "c": [
+    "FAM",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Cooley High",
+   "y": 1975,
+   "c": [
+    "COM",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Cornbread, Earl and Me",
+   "y": 1975,
+   "c": [
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Five on the Black Hand Side",
+   "y": 1973,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "Lady Sings the Blues",
+   "y": 1972,
+   "c": [
+    "MUS",
+    "ROM"
+   ]
+  },
+  {
+   "t": "Claudine",
+   "y": 1974,
+   "c": [
+    "ROM",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Mahogany",
+   "y": 1975,
+   "c": [
+    "ROM",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Sparkle",
+   "y": 1976,
+   "c": [
+    "MUS"
+   ]
+  },
+  {
+   "t": "The Wiz",
+   "y": 1978,
+   "c": [
+    "MUS",
+    "FAM"
+   ]
+  },
+  {
+   "t": "Car Wash",
+   "y": 1976,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "Uptown Saturday Night",
+   "y": 1974,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "Let's Do It Again",
+   "y": 1975,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "A Piece of the Action",
+   "y": 1977,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "48 Hrs.",
+   "y": 1982,
+   "c": [
+    "ACT",
+    "COM"
+   ]
+  },
+  {
+   "t": "Trading Places",
+   "y": 1983,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "Beverly Hills Cop",
+   "y": 1984,
+   "c": [
+    "ACT",
+    "COM"
+   ]
+  },
+  {
+   "t": "Beverly Hills Cop II",
+   "y": 1987,
+   "c": [
+    "ACT",
+    "COM"
+   ]
+  },
+  {
+   "t": "The Color Purple",
+   "y": 1985,
+   "c": [
+    "DRAMA",
+    "HIST"
+   ]
+  },
+  {
+   "t": "Purple Rain",
+   "y": 1984,
+   "c": [
+    "MUS"
+   ]
+  },
+  {
+   "t": "Krush Groove",
+   "y": 1985,
+   "c": [
+    "MUS"
+   ]
+  },
+  {
+   "t": "Beat Street",
+   "y": 1984,
+   "c": [
+    "MUS"
+   ]
+  },
+  {
+   "t": "Breakin'",
+   "y": 1984,
+   "c": [
+    "MUS"
+   ]
+  },
+  {
+   "t": "The Last Dragon",
+   "y": 1985,
+   "c": [
+    "ACT",
+    "FAM"
+   ]
+  },
+  {
+   "t": "A Soldier's Story",
+   "y": 1984,
+   "c": [
+    "DRAMA",
+    "HIST"
+   ]
+  },
+  {
+   "t": "Lean on Me",
+   "y": 1989,
+   "c": [
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Glory",
+   "y": 1989,
+   "c": [
+    "HIST"
+   ]
+  },
+  {
+   "t": "Colors",
+   "y": 1988,
+   "c": [
+    "HOOD",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Hollywood Shuffle",
+   "y": 1987,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "I'm Gonna Git You Sucka",
+   "y": 1988,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "Coming to America",
+   "y": 1988,
+   "c": [
+    "COM",
+    "ROM"
+   ]
+  },
+  {
+   "t": "Harlem Nights",
+   "y": 1989,
+   "c": [
+    "COM",
+    "ACT"
+   ]
+  },
+  {
+   "t": "She's Gotta Have It",
+   "y": 1986,
+   "c": [
+    "ROM",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "School Daze",
+   "y": 1988,
+   "c": [
+    "COM",
+    "MUS"
+   ]
+  },
+  {
+   "t": "Do the Right Thing",
+   "y": 1989,
+   "c": [
+    "HOOD",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Mo' Better Blues",
+   "y": 1990,
+   "c": [
+    "MUS",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Bird",
+   "y": 1988,
+   "c": [
+    "MUS"
+   ]
+  },
+  {
+   "t": "Round Midnight",
+   "y": 1986,
+   "c": [
+    "MUS"
+   ]
+  },
+  {
+   "t": "The Brother from Another Planet",
+   "y": 1984,
+   "c": [
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Jo Jo Dancer, Your Life Is Calling",
+   "y": 1986,
+   "c": [
+    "DRAMA",
+    "COM"
+   ]
+  },
+  {
+   "t": "Richard Pryor: Live on the Sunset Strip",
+   "y": 1982,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "Eddie Murphy Raw",
+   "y": 1987,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "Eddie Murphy Delirious",
+   "y": 1983,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "The Toy",
+   "y": 1982,
+   "c": [
+    "COM",
+    "FAM"
+   ]
+  },
+  {
+   "t": "House Party",
+   "y": 1990,
+   "c": [
+    "COM",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "House Party 2",
+   "y": 1991,
+   "c": [
+    "COM",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "Boyz n the Hood",
+   "y": 1991,
+   "c": [
+    "HOOD",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Menace II Society",
+   "y": 1993,
+   "c": [
+    "HOOD",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Juice",
+   "y": 1992,
+   "c": [
+    "HOOD",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "New Jack City",
+   "y": 1991,
+   "c": [
+    "HOOD",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Poetic Justice",
+   "y": 1993,
+   "c": [
+    "ROM",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "Higher Learning",
+   "y": 1995,
+   "c": [
+    "HOOD",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "South Central",
+   "y": 1992,
+   "c": [
+    "HOOD",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Straight Out of Brooklyn",
+   "y": 1991,
+   "c": [
+    "HOOD",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Set It Off",
+   "y": 1996,
+   "c": [
+    "ACT",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "Friday",
+   "y": 1995,
+   "c": [
+    "COM",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "Next Friday",
+   "y": 2000,
+   "c": [
+    "COM",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "Friday After Next",
+   "y": 2002,
+   "c": [
+    "COM",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "Don't Be a Menace to South Central While Drinking Your Juice in the Hood",
+   "y": 1996,
+   "c": [
+    "COM",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "CB4",
+   "y": 1993,
+   "c": [
+    "COM",
+    "MUS"
+   ]
+  },
+  {
+   "t": "Boomerang",
+   "y": 1992,
+   "c": [
+    "COM",
+    "ROM"
+   ]
+  },
+  {
+   "t": "Waiting to Exhale",
+   "y": 1995,
+   "c": [
+    "ROM",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Love Jones",
+   "y": 1997,
+   "c": [
+    "ROM"
+   ]
+  },
+  {
+   "t": "The Best Man",
+   "y": 1999,
+   "c": [
+    "ROM",
+    "COM"
+   ]
+  },
+  {
+   "t": "Soul Food",
+   "y": 1997,
+   "c": [
+    "ROM",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Eve's Bayou",
+   "y": 1997,
+   "c": [
+    "DRAMA",
+    "HOR"
+   ]
+  },
+  {
+   "t": "Malcolm X",
+   "y": 1992,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Crooklyn",
+   "y": 1994,
+   "c": [
+    "DRAMA",
+    "FAM"
+   ]
+  },
+  {
+   "t": "Clockers",
+   "y": 1995,
+   "c": [
+    "HOOD",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Get on the Bus",
+   "y": 1996,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Rosewood",
+   "y": 1997,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Amistad",
+   "y": 1997,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Panther",
+   "y": 1995,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Dead Presidents",
+   "y": 1995,
+   "c": [
+    "HOOD",
+    "ACT"
+   ]
+  },
+  {
+   "t": "A Low Down Dirty Shame",
+   "y": 1994,
+   "c": [
+    "COM",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Above the Rim",
+   "y": 1994,
+   "c": [
+    "HOOD",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Jason's Lyric",
+   "y": 1994,
+   "c": [
+    "ROM",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "The Wood",
+   "y": 1999,
+   "c": [
+    "COM",
+    "ROM"
+   ]
+  },
+  {
+   "t": "How Stella Got Her Groove Back",
+   "y": 1998,
+   "c": [
+    "ROM"
+   ]
+  },
+  {
+   "t": "Cool Runnings",
+   "y": 1993,
+   "c": [
+    "FAM",
+    "COM"
+   ]
+  },
+  {
+   "t": "Space Jam",
+   "y": 1996,
+   "c": [
+    "FAM",
+    "COM"
+   ]
+  },
+  {
+   "t": "The Preacher's Wife",
+   "y": 1996,
+   "c": [
+    "FAM",
+    "ROM"
+   ]
+  },
+  {
+   "t": "The Nutty Professor",
+   "y": 1996,
+   "c": [
+    "COM",
+    "FAM"
+   ]
+  },
+  {
+   "t": "Life",
+   "y": 1999,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "The Players Club",
+   "y": 1998,
+   "c": [
+    "DRAMA",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "Booty Call",
+   "y": 1997,
+   "c": [
+    "COM",
+    "ROM"
+   ]
+  },
+  {
+   "t": "What's Love Got to Do with It",
+   "y": 1993,
+   "c": [
+    "MUS",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Beloved",
+   "y": 1998,
+   "c": [
+    "DRAMA",
+    "HIST"
+   ]
+  },
+  {
+   "t": "Daughters of the Dust",
+   "y": 1991,
+   "c": [
+    "DRAMA",
+    "HIST"
+   ]
+  },
+  {
+   "t": "Tales from the Hood",
+   "y": 1995,
+   "c": [
+    "HOR"
+   ]
+  },
+  {
+   "t": "Candyman",
+   "y": 1992,
+   "c": [
+    "HOR"
+   ]
+  },
+  {
+   "t": "Def by Temptation",
+   "y": 1990,
+   "c": [
+    "HOR"
+   ]
+  },
+  {
+   "t": "Mo' Money",
+   "y": 1992,
+   "c": [
+    "COM",
+    "ACT"
+   ]
+  },
+  {
+   "t": "The Distinguished Gentleman",
+   "y": 1992,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "Belly",
+   "y": 1998,
+   "c": [
+    "HOOD",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Slam",
+   "y": 1998,
+   "c": [
+    "HOOD",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Bulletproof",
+   "y": 1996,
+   "c": [
+    "COM",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Hoodlum",
+   "y": 1997,
+   "c": [
+    "ACT",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "Sugar Hill",
+   "y": 1993,
+   "c": [
+    "HOOD",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Love & Basketball",
+   "y": 2000,
+   "c": [
+    "ROM",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Training Day",
+   "y": 2001,
+   "c": [
+    "ACT",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "Ali",
+   "y": 2001,
+   "c": [
+    "MUS",
+    "HIST"
+   ]
+  },
+  {
+   "t": "Barbershop",
+   "y": 2002,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "Barbershop 2: Back in Business",
+   "y": 2004,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "Brown Sugar",
+   "y": 2002,
+   "c": [
+    "ROM",
+    "COM"
+   ]
+  },
+  {
+   "t": "Drumline",
+   "y": 2002,
+   "c": [
+    "MUS",
+    "COM"
+   ]
+  },
+  {
+   "t": "Antwone Fisher",
+   "y": 2002,
+   "c": [
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Undercover Brother",
+   "y": 2002,
+   "c": [
+    "COM",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Bad Boys II",
+   "y": 2003,
+   "c": [
+    "ACT",
+    "COM"
+   ]
+  },
+  {
+   "t": "Honey",
+   "y": 2003,
+   "c": [
+    "MUS",
+    "ROM"
+   ]
+  },
+  {
+   "t": "Ray",
+   "y": 2004,
+   "c": [
+    "MUS",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Hotel Rwanda",
+   "y": 2004,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "You Got Served",
+   "y": 2004,
+   "c": [
+    "MUS"
+   ]
+  },
+  {
+   "t": "Hustle & Flow",
+   "y": 2005,
+   "c": [
+    "MUS",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "Diary of a Mad Black Woman",
+   "y": 2005,
+   "c": [
+    "ROM",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Coach Carter",
+   "y": 2005,
+   "c": [
+    "DRAMA",
+    "FAM"
+   ]
+  },
+  {
+   "t": "Roll Bounce",
+   "y": 2005,
+   "c": [
+    "COM",
+    "MUS"
+   ]
+  },
+  {
+   "t": "Beauty Shop",
+   "y": 2005,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "Madea's Family Reunion",
+   "y": 2006,
+   "c": [
+    "COM",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Akeelah and the Bee",
+   "y": 2006,
+   "c": [
+    "FAM",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Dreamgirls",
+   "y": 2006,
+   "c": [
+    "MUS"
+   ]
+  },
+  {
+   "t": "ATL",
+   "y": 2006,
+   "c": [
+    "HOOD",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Idlewild",
+   "y": 2006,
+   "c": [
+    "MUS"
+   ]
+  },
+  {
+   "t": "The Pursuit of Happyness",
+   "y": 2006,
+   "c": [
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Why Did I Get Married?",
+   "y": 2007,
+   "c": [
+    "ROM",
+    "COM"
+   ]
+  },
+  {
+   "t": "The Great Debaters",
+   "y": 2007,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Stomp the Yard",
+   "y": 2007,
+   "c": [
+    "MUS",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "American Gangster",
+   "y": 2007,
+   "c": [
+    "ACT",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "Talk to Me",
+   "y": 2007,
+   "c": [
+    "MUS",
+    "COM"
+   ]
+  },
+  {
+   "t": "Daddy's Little Girls",
+   "y": 2007,
+   "c": [
+    "ROM",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Cadillac Records",
+   "y": 2008,
+   "c": [
+    "MUS"
+   ]
+  },
+  {
+   "t": "Meet the Browns",
+   "y": 2008,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "Notorious",
+   "y": 2009,
+   "c": [
+    "MUS",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "Precious",
+   "y": 2009,
+   "c": [
+    "DRAMA",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "Madea Goes to Jail",
+   "y": 2009,
+   "c": [
+    "COM",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Jumping the Broom",
+   "y": 2011,
+   "c": [
+    "ROM",
+    "COM"
+   ]
+  },
+  {
+   "t": "Think Like a Man",
+   "y": 2012,
+   "c": [
+    "ROM",
+    "COM"
+   ]
+  },
+  {
+   "t": "Fruitvale Station",
+   "y": 2013,
+   "c": [
+    "DRAMA",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "12 Years a Slave",
+   "y": 2013,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "The Butler",
+   "y": 2013,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "The Best Man Holiday",
+   "y": 2013,
+   "c": [
+    "ROM",
+    "COM"
+   ]
+  },
+  {
+   "t": "Ride Along",
+   "y": 2014,
+   "c": [
+    "ACT",
+    "COM"
+   ]
+  },
+  {
+   "t": "Selma",
+   "y": 2014,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Straight Outta Compton",
+   "y": 2015,
+   "c": [
+    "MUS",
+    "HOOD"
+   ]
+  },
+  {
+   "t": "Creed",
+   "y": 2015,
+   "c": [
+    "DRAMA",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Barbershop: The Next Cut",
+   "y": 2016,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "Moonlight",
+   "y": 2016,
+   "c": [
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Hidden Figures",
+   "y": 2016,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Fences",
+   "y": 2016,
+   "c": [
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Almost Christmas",
+   "y": 2016,
+   "c": [
+    "COM",
+    "FAM"
+   ]
+  },
+  {
+   "t": "Girls Trip",
+   "y": 2017,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "Get Out",
+   "y": 2017,
+   "c": [
+    "HOR"
+   ]
+  },
+  {
+   "t": "Black Panther",
+   "y": 2018,
+   "c": [
+    "ACT",
+    "FAM"
+   ]
+  },
+  {
+   "t": "BlacKkKlansman",
+   "y": 2018,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Sorry to Bother You",
+   "y": 2018,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "If Beale Street Could Talk",
+   "y": 2018,
+   "c": [
+    "ROM",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Us",
+   "y": 2019,
+   "c": [
+    "HOR"
+   ]
+  },
+  {
+   "t": "Just Mercy",
+   "y": 2019,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Harriet",
+   "y": 2019,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Queen & Slim",
+   "y": 2019,
+   "c": [
+    "ROM",
+    "ACT"
+   ]
+  },
+  {
+   "t": "The Photograph",
+   "y": 2020,
+   "c": [
+    "ROM"
+   ]
+  },
+  {
+   "t": "Ma Rainey's Black Bottom",
+   "y": 2020,
+   "c": [
+    "MUS",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Sylvie's Love",
+   "y": 2020,
+   "c": [
+    "ROM",
+    "MUS"
+   ]
+  },
+  {
+   "t": "Soul",
+   "y": 2020,
+   "c": [
+    "FAM"
+   ]
+  },
+  {
+   "t": "Judas and the Black Messiah",
+   "y": 2021,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "King Richard",
+   "y": 2021,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Coming 2 America",
+   "y": 2021,
+   "c": [
+    "COM"
+   ]
+  },
+  {
+   "t": "Candyman",
+   "y": 2021,
+   "c": [
+    "HOR"
+   ]
+  },
+  {
+   "t": "Black Panther: Wakanda Forever",
+   "y": 2022,
+   "c": [
+    "ACT",
+    "FAM"
+   ]
+  },
+  {
+   "t": "The Woman King",
+   "y": 2022,
+   "c": [
+    "ACT",
+    "HIST"
+   ]
+  },
+  {
+   "t": "Till",
+   "y": 2022,
+   "c": [
+    "HIST",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Emancipation",
+   "y": 2022,
+   "c": [
+    "HIST",
+    "ACT"
+   ]
+  },
+  {
+   "t": "Nope",
+   "y": 2022,
+   "c": [
+    "HOR"
+   ]
+  },
+  {
+   "t": "American Fiction",
+   "y": 2023,
+   "c": [
+    "COM",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "The Color Purple",
+   "y": 2023,
+   "c": [
+    "MUS",
+    "DRAMA"
+   ]
+  },
+  {
+   "t": "Bob Marley: One Love",
+   "y": 2024,
+   "c": [
+    "MUS"
+   ]
+  },
+  {
+   "t": "Sinners",
+   "y": 2025,
+   "c": [
+    "HOR",
+    "MUS"
+   ]
+  }
+ ]
+}
