@@ -15,6 +15,13 @@ object BlackCinemaLogic {
     /** A catalog entry together with the playlist movie that plays it. */
     class Match(val entry: Entry, val item: Item)
 
+    /** Category ids of the catalog in display order, with their row titles. */
+    val CATEGORIES: List<Pair<String, String>> = listOf(
+        "BLX" to "Blaxploitation", "HOOD" to "Hood & Urban", "ROM" to "Romance", "COM" to "Comedy",
+        "ACT" to "Action & Crime", "FAM" to "Family", "MUS" to "Music & Biopics",
+        "HIST" to "Civil Rights & History", "HOR" to "Horror & Thriller", "DRAMA" to "Drama", "CLAS" to "Classics"
+    )
+
     /** Display label of a decade: 1970 -> "1970s"; before 1970 -> "Classics". */
     fun decadeLabel(decade: Int): String = if (decade < 1970) "Classics" else "${decade}s"
 
