@@ -5,7 +5,7 @@ package com.ipvio.stream
  * Guarantees: every area occurs exactly once, "Start" (0) and "Settings" (5) can never be hidden.
  */
 object MenuLogic {
-    const val COUNT = 11
+    const val COUNT = 12
     const val HOME = 0
     const val SEARCH = 4
     const val SETTINGS = 5
@@ -17,8 +17,10 @@ object MenuLogic {
     const val VERLAUF = 9
     /** Round 20: Sports – running and upcoming sports shows, sports channels. */
     const val SPORT = 10
+    /** NEONGRID 0.2: Black Cinema collection (curated catalog matched against all loaded playlists). */
+    const val BLACK = 11
     /** Wie im Entwurf: Home, Live TV, Filme, Serien, EPG, Favoriten, Meine Liste, (Suche), Einstellungen. */
-    val DEFAULT_ORDER = listOf(0, 3, 1, 2, SPORT, EPG, FAVS, MYLIST, VERLAUF, SEARCH, 5)
+    val DEFAULT_ORDER = listOf(0, 3, 1, 2, SPORT, BLACK, EPG, FAVS, MYLIST, VERLAUF, SEARCH, 5)
     /**
      * Search sits at the top in the header, not in the sidebar: hidden by default.
      * EPG (round 14, user's wish): also hidden – the TV guide is reachable via Live TV.

@@ -130,6 +130,18 @@ fun MenuIcon(id: Int, color: Color, modifier: Modifier = Modifier) {
                 drawArc(color, 200f, 140f, false, topLeft = Offset(.14f * s, .02f * s), size = Size(.72f * s, .5f * s), style = sw)
                 drawArc(color, 20f, 140f, false, topLeft = Offset(.14f * s, .48f * s), size = Size(.72f * s, .5f * s), style = sw)
             }
+            11 -> { // Black Cinema: star
+                val p = Path()
+                for (k in 0 until 10) {
+                    val a = Math.toRadians((-90 + k * 36).toDouble())
+                    val r = if (k % 2 == 0) .40f else .17f
+                    val x = (.5f + r * Math.cos(a).toFloat()) * s
+                    val y = (.53f + r * Math.sin(a).toFloat()) * s
+                    if (k == 0) p.moveTo(x, y) else p.lineTo(x, y)
+                }
+                p.close()
+                drawPath(p, color, style = sw)
+            }
             else -> {
                 for (y in listOf(.26f, .5f, .74f)) line(.12f, y, .88f, y)
             }

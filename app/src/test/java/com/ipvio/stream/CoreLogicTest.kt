@@ -139,8 +139,8 @@ http://h/x
     }
 
     @Test fun menue_kaputteWerteWerdenRepariert() {
-        val o = MenuLogic.parseOrder("11,3,3,x,-1,2")
-        assertEquals(listOf(3, 2, 0, 1, 4, 6, 7, 8, 9, 10, 5), o)
+        val o = MenuLogic.parseOrder("99,3,3,x,-1,2")
+        assertEquals(listOf(3, 2, 0, 1, 4, 6, 7, 8, 9, 10, 11, 5), o)
         assertEquals(MenuLogic.COUNT, o.toSet().size)
     }
 

@@ -215,6 +215,9 @@ fun HomeScreen(
     // derivedStateOf: the lists are rebuilt only when history / favorites / My list really change, not on every
     // recomposition; the same list object lets the rows below skip instead of recomposing all their cards
     val hist by remember(byId) { derivedStateOf { History.ids.mapNotNull { byId[it] } } }
+    // Black Cinema: curated catalog matched against the movies of all loaded playlists (off the main thread)
+    var bcMatches by remember { mutableStateOf<List<BlackCinemaLogic.Match>>(emptyList()) }
+    LaunchedEffect(movies) { bcMatches = withContext(Dispatchers.Default) { BlackCinemaLogic.match(BlackCinema.catalog(ctx), movies) } }
     val watchList by remember(byId) { derivedStateOf { Library.watch.mapNotNull { byId[it] } } }
     val favLive by remember(byId) { derivedStateOf { Library.favs.mapNotNull { byId[it] }.filter { it.kind == Kind.LIVE } } }
     // Row lists that were built anew inside the rows on every recomposition
@@ -733,6 +736,34 @@ fun HomeScreen(
                             if (vs.isNotEmpty()) {
                                 item(key = "vlsh") { RowTitle("Verlauf · Serien", null, null, onAll = null) }
                                 item(key = "vls") { CardGridRows(vs, CARD_POSTER, if (vm.isEmpty()) ContentFocus.req else null, onOpen) }
+                            }
+                        }
+                        MenuLogic.BLACK -> {
+                            item(key = "bctop") { header(Modifier) }
+                            if (bcMatches.isEmpty()) {
+                                item(key = "bce") {
+                                    Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+                                        EmptyState(AIcon.Star, "No Black Cinema titles found yet",
+                                            "Titles from your playlists that match the Black Cinema collection appear here. Add a playlist with movies, or reload your playlists.",
+                                            action = "Add playlist", actionModifier = Modifier.focusRequester(ContentFocus.req)) { onAdd() }
+                                    }
+                                }
+                            } else {
+                                val favs = bcMatches.filter { Library.isFav(it.item.id) }.map { it.item }
+                                val rows = ArrayList<Triple<String, String, List<Item>>>()   // key, title, items
+                                if (favs.isNotEmpty()) rows.add(Triple("bcfav", "My Favorites", favs))
+                                for ((label, l) in BlackCinemaLogic.byDecade(bcMatches)) rows.add(Triple("bcd$label", label, l.map { it.item }))
+                                for ((id, name) in BlackCinemaLogic.CATEGORIES) {
+                                    val items = bcMatches.filter { id in it.entry.cats }.sortedBy { it.entry.year }.map { it.item }
+                                    if (items.isNotEmpty()) rows.add(Triple("bcc$id", name, items))
+                                }
+                                rows.forEachIndexed { idx, (key, title, items) ->
+                                    item(key = key) {
+                                        ItemsRow(title, items, cardW, onOpen, firstReq = if (idx == 0) ContentFocus.req else null) {
+                                            onBrowse(BrowseReq("Black Cinema · $title", items, SORT_PLAYLIST))
+                                        }
+                                    }
+                                }
                             }
                         }
                         else -> {
